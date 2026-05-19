@@ -1,0 +1,20 @@
+ollama:
+  base_url: "http://localhost:11434"
+  llm_model: "llama3.2"
+  embedding_model: "nomic-embed-text"
+  timeout_seconds: 30
+  retry:
+    max_attempts: 3
+    wait_seconds: 2
+
+chromadb:
+  persist_path: "./data/chroma"
+  collection_name: "log_intelligence"
+
+retrieval:
+  top_k: 5
+
+chunking:
+  chunk_size: 512
+  chunk_overlap: 50
+  merge_multiline_exceptions: true

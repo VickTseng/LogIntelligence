@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "logiq"
+version = "0.1.0"
+description = "NLog 智慧問答系統（RAG + Ollama + ChromaDB）"
+requires-python = ">=3.9"
+dependencies = [
+    "langchain>=0.3.0",
+    "langchain-core>=0.3.0",
+    "langchain-ollama>=0.2.0",
+    "langchain-chroma>=0.1.0",
+    "langchain-text-splitters>=0.3.0",
+    "chromadb>=0.5.0",
+    "typer>=0.12.0",
+    "tenacity>=8.2.0",
+    "pyyaml>=6.0.0",
+    "python-dotenv>=1.0.0",
+    "rich>=13.0.0",
+    "httpx>=0.27.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0.0", "pytest-mock>=3.12.0"]
+
+[project.scripts]
+logiq = "logiq.cli.main:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["logiq*"]
